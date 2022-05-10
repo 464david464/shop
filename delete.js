@@ -7,9 +7,9 @@ function deleteFn(deleteKey) {
     if(!Object.keys(cart).includes(deleteKey)) {
         console.log(`key ${deleteKey} didn't exists`);
     } else {
-        delete cart.deleteKey
+        delete cart[deleteKey]
         
-        console.log(JSON.stringify(cart) + ' after');
+        fs.writeFileSync('./cart.json', JSON.stringify(cart))
     }
 }
 
